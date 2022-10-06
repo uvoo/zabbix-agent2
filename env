@@ -1,0 +1,4 @@
+export SRC_REPO=zabbix/zabbix-agent2:6.0.9-alpine
+export SRC_REPO_TAG=6.0.9-alpine
+export DST_REPO=uvoo/zabbix-agent2
+export DST_REPO_TAG=6.0.9-alpine
