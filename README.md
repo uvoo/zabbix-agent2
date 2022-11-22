@@ -7,6 +7,8 @@ https://github.com/zabbix/zabbix/tree/master/templates/db/postgresql
 
 Getting current files
 ```
-git clone -b 6.0 https://github.com/zabbix/zabbix
+rm -rf postgresql
+git clone --depth 1 --branch 6.0.10 https://github.com/zabbix/zabbix
 cp -rp zabbix/templates/db/postgresql ./
+rm -rf zabbix
 ```
