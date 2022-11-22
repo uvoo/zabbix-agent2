@@ -9,9 +9,9 @@ processTemplates(){
   done
 }
 
-# echo "${INTERNAL_CA_ROOT_CRT}" > internal_ca_root.crt
+echo "${INTERNAL_CA_ROOT_CRT}" > internal_ca_root.crt
 
-. env
+. .env
 processTemplates
 
 # cd alertscripts/ && find . -type f -exec chmod 0500 -- {} + && cd ../

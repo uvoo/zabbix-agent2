@@ -6,18 +6,19 @@
 FROM ${SRC_REPO}:${SRC_REPO_TAG}
 USER root
 
+FROM $SRC_REPO:$SRC_REPO_TAG
+USER root
+
+ADD internal_ca_root.crt /usr/local/share/ca-certificates/internal_ca_root.crt
+RUN chmod 644 /usr/local/share/ca-certificates/internal_ca_root.crt && update-ca-certificates
+
 ADD ./postgresql/postgresql /var/lib/zabbix/postgresql
 ADD ./postgresql/template_db_postgresql.conf /etc/zabbix/zabbix_agent2.d/
 RUN chown -R zabbix /var/lib/zabbix/postgresql
 
-EXPOSE 10050/TCP 31999/TCP
-
+EXPOSE 10050/TCP
 WORKDIR /var/lib/zabbix
-
 COPY ["docker-entrypoint.sh", "/usr/bin/"]
-
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/docker-entrypoint.sh"]
-
 USER 1997
-
 CMD ["/usr/sbin/zabbix_agent2", "--foreground", "-c", "/etc/zabbix/zabbix_agent2.conf"]
