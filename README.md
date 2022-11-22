@@ -1,8 +1,10 @@
-Zabbix agent2 alpine with postgresql support
+Zabbix agent2 ubuntu with postgresql support
 
-https://github.com/zabbix/zabbix-docker/tree/6.0/Dockerfiles/agent2/alpine
+https://github.com/zabbix/zabbix-docker/blob/6.2/Dockerfiles/agent2/ubuntu/Dockerfile
 
 https://github.com/zabbix/zabbix/tree/master/templates/db/postgresql
+ 
+https://github.com/zabbix/zabbix-docker/tree/6.0/Dockerfiles/agent2/alpine
 
 
 Getting current files
